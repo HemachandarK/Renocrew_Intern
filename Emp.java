@@ -1,30 +1,43 @@
-package com.springcore.collections;
+package com.springcore.auto.wire.annotation;
 
-import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 
 public class Emp {
-	private String name;
-	private List<Integer> phno;
-	public String getName() {
-		return name;
+	
+	@Autowired
+	@Qualifier("temp2")
+	private Address address;
+
+	public Address getAddress() {
+		return address;
 	}
-	public void setName(String name) {
-		this.name = name;
+
+	
+	public void setAddress(Address address) {
+		System.out.println("Setting value");
+		this.address = address;
 	}
-	public List<Integer> getPhno() {
-		return phno;
-	}
-	public void setPhno(List<Integer> phno) {
-		this.phno = phno;
-	}
-	public Emp(String name, List<Integer> phno) {
-		super();
-		this.name = name;
-		this.phno = phno;
-	}
+
 	public Emp() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
+
+	
+	public Emp(Address address) {
+		super();
+		this.address = address;
+		System.out.println("inside constructor");
+	}
+
+	@Override
+	public String toString() {
+		return "Emp [address=" + address + "]";
+	}
+	
+	
+	
+	
 	
 }
