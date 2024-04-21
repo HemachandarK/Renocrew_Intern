@@ -1,48 +1,52 @@
-package com.springcore.stereotype;
+package com.spring.jdbc.entites;
 
-import java.util.List;
-
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.context.annotation.Scope;
-import org.springframework.stereotype.Component;
-
-@Component("ob")
-@Scope("prototype")
 public class Student {
-	
-	@Value("Durgesh Tiwari")
-	private String studentName;
-	@Value("Lucknow")	
+
+	private int id;
+	private String name;
 	private String city;
 	
-	@Value("#{temp}")
-	private List<String> address;
-	
-	public String getStudentName() {
-		return studentName;
+	public Student() {
+		
 	}
-	public void setStudentName(String studentName) {
-		this.studentName = studentName;
+
+	public Student(int id, String name, String city) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.city = city;
 	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
 	public String getCity() {
 		return city;
 	}
+
 	public void setCity(String city) {
 		this.city = city;
 	}
-	
-	
-	
-	public List<String> getAddress() {
-		return address;
-	}
-	public void setAddress(List<String> address) {
-		this.address = address;
-	}
+
 	@Override
 	public String toString() {
-		return "Student [studentName=" + studentName + ", city=" + city + "]";
+		return "Student [id=" + id + ", name=" + name + ", city=" + city + "]";
 	}
+	
+	
 	
 	
 }
