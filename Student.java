@@ -1,59 +1,72 @@
-package com.spring.orm.entities;
+package springmvcsearch;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import java.util.Date;
+import java.util.List;
 
-@Entity
-@Table(name = "student_details")
+import org.springframework.format.annotation.DateTimeFormat;
+
 public class Student {
-
-	@Id
-	@Column(name = "student_id")
-	private int studentId;
-	@Column(name = "student_name")
-	private String studentName;
-	@Column(name = "student_city")
-	private String studentCity;
 	
-	public Student(int studentId, String studentName, String studentCity) {
-		super();
-		this.studentId = studentId;
-		this.studentName = studentName;
-		this.studentCity = studentCity;
-	}
-
-	public Student() {	
-	}
-
-	public int getStudentId() {
-		return studentId;
-	}
-
-	public void setStudentId(int studentId) {
-		this.studentId = studentId;
-	}
-
-	public String getStudentName() {
-		return studentName;
-	}
-
-	public void setStudentName(String studentName) {
-		this.studentName = studentName;
-	}
-
-	public String getStudentCity() {
-		return studentCity;
-	}
-
-	public void setStudentCity(String studentCity) {
-		this.studentCity = studentCity;
-	}
+	private String name;
+	private Long id;
+	
+	private Date date;
+	private List<String> courses;
+	private String gender;
+	private String type;
 	
 	
+	private Address address;
+	
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public Long getId() {
+		return id;
+	}
+	public void setId(Long id) {
+		this.id = id;
+	}
+	public Date getDate() {
+		return date;
+	}
+	public void setDate(Date date) {
+		this.date = date;
+	}
+	public List<String> getCourses() {
+		return courses;
+	}
+	public void setCourses(List<String> courses) {
+		this.courses = courses;
+	}
+	public String getGender() {
+		return gender;
+	}
+	public void setGender(String gender) {
+		this.gender = gender;
+	}
+	public String getType() {
+		return type;
+	}
+	public void setType(String type) {
+		this.type = type;
+	}
+	public Address getAddress() {
+		return address;
+	}
+	public void setAddress(Address address) {
+		this.address = address;
+	}
+	@Override
+	public String toString() {
+		return "Student [name=" + name + ", id=" + id + ", date=" + date + ", courses=" + courses + ", gender=" + gender
+				+ ", type=" + type + ", address=" + address + "]";
+	}
 	
 	
 	
-
+	
 }
